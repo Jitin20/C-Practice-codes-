@@ -36,16 +36,25 @@ namespace Assignment_1_MET1_
             Console.WriteLine(value);
         }
 
-        private int Batsman(int runs)
+        private static void Batsman()
         {
+            int runs = 0;
             int sum = 0;
             Random rand = new Random();
             for(int i =0; i<=30; i++)
+            {
+                runs = Convert.ToInt32(rand.Next(1, 6));
+                Console.WriteLine(runs);
+                sum = sum + runs;
+            }
+            Console.WriteLine(sum);
+           
         }
         static void Main(string[] args)
         {
             ElectricityBill();
 
+            Batsman();
         }
 
        
