@@ -38,26 +38,46 @@ namespace Assignment_1_MET1_
 
         private static void Batsman()
         {
+          
+            int[] innings = new int[] {};
+            Console.WriteLine("Enter the number of Innings");
+            
+            for(int j = 0; j < innings.Length; j++)
+            {
+                innings[j] = Convert.ToInt32(Console.ReadLine());
+            }
+            int[] ballPlayed = new int[] {} ;
+            Console.WriteLine("Enter the number of balls played by batsman in each innings");
+            for (int m =0; m< innings.Length; m++)
+            {
+                ballPlayed[m] = Convert.ToInt32(Console.ReadLine());
+            
+            }
+            
+            
             int runs = 0;
             int sum = 0;
             Hashtable map = new Hashtable();
             Random rand = new Random();
-            for(int i =0; i<=30; i++)
+
+            for ( int i= 0; i <= innings.Length; i++)
             {
-                runs = Convert.ToInt32(rand.Next(1, 6));
-                Console.WriteLine(runs);
-                sum = sum + runs;
-                if(map.ContainsKey(runs))
+                for (int j = 0; j <= ballPlayed.Length; j++)
                 {
-                    map[runs] = Convert.ToInt32(map[runs]) + 1;
-                }
-                else
-                {
-                    map.Add(runs, 1);
+                    runs = Convert.ToInt32(rand.Next(1, 6));
+                    Console.WriteLine(runs);
+                    sum = sum + runs;
+                    if (map.ContainsKey(runs))
+                    {
+                        map[runs] = Convert.ToInt32(map[runs]) + 1;
+                    }
+                    else
+                    {
+                        map.Add(runs, 1);
+                    }
                 }
             }
-            
-            Console.WriteLine(sum);
+            Console.WriteLine("Runs in all innings: {0}",sum);
             foreach(int key in map.Keys)
             {
                 String count = String.Format("Runs:{0} Count:{1}", key, map[key]);
