@@ -70,7 +70,7 @@ namespace Assignment_1_MET1_
            
         }
         static void Main(string[] args)
-        {
+        { 
             ElectricityBill();
             Batsman();
         }
